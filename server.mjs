@@ -23,7 +23,7 @@ hostList.push(hostTarget);
   
 let apiHostList = ['api.lenguapedia.org' ,  'lenguapedia-api.vercel.app' ,'lenguapedia-api.weblet.repl.co'];
 let apiHost = undefined;
-//let chars = fetchText('https://files-servleteer.vercel.app/fandom/chars.html');
+//let chars = fetchText('https://files-servleteer-vercel-app-six.vercel.app/fandom/chars.html');
 //chars.unawaited = true;
 let determineApiHost=(async function(){
 for(let i=0;i<apiHostList.length;i++){try{
@@ -192,10 +192,10 @@ delete(resDTO.headers['X-Content-Type-Options']);
          `<link href="https://api.lenguapedia.org/corsFetchStyles/https://`+hostTarget+`/wikia.php?controller=ThemeApi&method=themeVariables" rel="stylesheet">`    +
         `<link rel="stylesheet" href="https://api.lenguapedia.org/corsFetchStyles/https://`+hostTarget+`/load.php?lang=en&modules=site.styles&only=styles&skin=fandomdesktop">`+
         `<script src="/sw.js?`+after+`"></script>`+
-      //  `<script src="https://files-servleteer.vercel.app/fandom/link-resolver.js" host-list=` + btoa(JSON.stringify(hostList)) + `></script>` +
-       // `<script src="https://files-servleteer.vercel.app/link-resolver-full.js"` + new Date().getTime() + `></script>` +
-        `<script src="https://files-servleteer.vercel.app/fandom/fandom-block.js"></script>` +
-        `<link rel="stylesheet" href="https://files-servleteer.vercel.app/fandom/fandom-block.css"></link>`+
+      //  `<script src="https://files-servleteer-vercel-app-six.vercel.app/fandom/link-resolver.js" host-list=` + btoa(JSON.stringify(hostList)) + `></script>` +
+       // `<script src="https://files-servleteer-vercel-app-six.vercel.app/link-resolver-full.js"` + new Date().getTime() + `></script>` +
+        `<script src="https://files-servleteer-vercel-app-six.vercel.app/fandom/fandom-block.js"></script>` +
+        `<link rel="stylesheet" href="https://files-servleteer-vercel-app-six.vercel.app/fandom/fandom-block.css"></link>`+
         `<http>
           <http-response>
             <http-headers>
@@ -206,8 +206,8 @@ delete(resDTO.headers['X-Content-Type-Options']);
         .replaceAll('https://static.wikia.nocookie.net', 'https://'+apiHost+'/corsFetch/https:/static.wikia.nocookie.net')
         .replace(/src="https:\/\/services.fandom[^"]*"/gi,'type="dev/null"')
         .replace('</body>',
-        `<script defer src="https://files-servleteer.vercel.app/fandom/link-resolver.js" host-list=` + btoa(JSON.stringify(hostList)) + `></script>`+
-       // `<script src="https://files-servleteer.vercel.app/fandom/decode-fix.js" defer></script>` +
+        `<script defer src="https://files-servleteer-vercel-app-six.vercel.app/fandom/link-resolver.js" host-list=` + btoa(JSON.stringify(hostList)) + `></script>`+
+       // `<script src="https://files-servleteer-vercel-app-six.vercel.app/fandom/decode-fix.js" defer></script>` +
        // chars +
         `</body>`);
     }
